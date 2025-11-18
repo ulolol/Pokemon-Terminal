@@ -104,7 +104,7 @@ either.add_argument(
     action='store_true')
 either.add_argument(
     'id',
-    help='Specify the wanted pokemon ID or the exact (case insensitive)' +
-    ' name',
+    help='Specify the wanted pokemon ID, the exact (case insensitive) name, ' +
+    'or "random" to select a random pokemon',
     nargs='?',
     default=0, const=0)

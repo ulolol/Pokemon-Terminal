@@ -24,11 +24,15 @@ def main(argv=None):
     try:
         options.id = int(options.id)
     except ValueError:
-        options.name = options.id.lower()
-        options.id = 0
-        Filter.filtered_list = [
-            x for x in Filter.filtered_list if options.name == x.get_name()
-        ]
+        # Check if the user specified 'random' explicitly
+        if options.id.lower() == 'random':
+            options.id = 0  # Treat 'random' as no specific ID (selects randomly)
+        else:
+            options.name = options.id.lower()
+            options.id = 0
+            Filter.filtered_list = [
+                x for x in Filter.filtered_list if options.name == x.get_name()
+            ]
 
     size = len(Filter.filtered_list)
     if size == 0:
