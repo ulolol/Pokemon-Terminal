@@ -1,6 +1,6 @@
 ﻿# Pokemon-Terminal
 
-[![Version](https://img.shields.io/badge/version-v1.4.0-blue.svg)](https://github.com/ulolol/Pokemon-Terminal/releases/tag/v1.4.0)
+[![Version](https://img.shields.io/badge/version-v1.4.0-blue.svg)](https://github.com/ulolol/Pokemon-Terminal/releases/tag/1.4.0)
 
 <p align="center">
     <img src="https://i.imgur.com/n34fXyp.png" width="700"/> <!--Pikachu-->
