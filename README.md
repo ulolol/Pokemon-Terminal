@@ -1,6 +1,6 @@
 ﻿# Pokemon-Terminal
 
-[![Build Status](https://travis-ci.org/LazoCoder/Pokemon-Terminal.svg?branch=master)](https://travis-ci.org/LazoCoder/Pokemon-Terminal)
+[![Version](https://img.shields.io/badge/version-v1.4.0-blue.svg)](https://github.com/ulolol/Pokemon-Terminal/releases/tag/v1.4.0)
 
 <p align="center">
     <img src="https://i.imgur.com/n34fXyp.png" width="700"/> <!--Pikachu-->
@@ -34,9 +34,10 @@
 # Features
 - 719 unique Pokemon
 - Select Pokemon by name or by index number
+- Random Pokemon selection with display feedback
 - Ability to change the Desktop Wallpaper & the Terminal background
 - Internal search system for finding Pokemon
-- Supports iTerm2, ConEmu, Terminology, Windows Terminal, Tilix and Kitty terminal emulators
+- Supports iTerm2, ConEmu, Terminology, Windows Terminal, Tilix, Kitty, and Contour terminal emulators
 - Supports Windows, MacOS, GNOME, Openbox (with feh), i3wm (with feh) and sway for desktops
 
 # Installation
@@ -55,6 +56,7 @@ Get a compatible terminal emulator:
 - [Tilix](https://gnunn1.github.io/tilix-web/)
 - [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701)
 - [Kitty](https://sw.kovidgoyal.net/kitty/) from version `0.27.0` onwards
+- [Contour Terminal](https://contour-terminal.org/)
 
 You can then proceed with one of the following methods for installation:
 - [Arch Linux User Repository package (System-wide)](https://aur.archlinux.org/packages/pokemon-terminal-git/) (maintained by [@sylveon](https://github.com/sylveon))
@@ -219,6 +221,27 @@ remote_control_password "" set-background-image
 
 If you choose option 1 (recommended), you still need to pass your chosen password when running `pokemon`, this works using the environment variable `KITTY_RC_PASSWORD` - i.e. you can run `KITTY_RC_PASSWORD=missingno pokemon`, or set the variable in any other way using your method of choice.
 
+## Contour Terminal settings
+
+To use Contour Terminal with Pokemon-Terminal, you need to install PyYAML as an optional dependency:
+
+```bash
+# If installed via pip
+pip install pokemon-terminal[contour]
+
+# If installed via AUR
+pacman -S python-pyyaml
+```
+
+The background image changes are written to your Contour configuration file (`~/.config/contour/contour.yml`). By default, Contour requires a restart to apply the new background. If you want the background to update without restarting, you can enable live config reloading:
+
+Add this to your `~/.config/contour/contour.yml`:
+```yaml
+live_config: true
+```
+
+Note: Even with `live_config: true`, you may still need to restart Contour to see the new background image visually (this is a limitation of Contour Terminal itself).
+
 ## Adding Custom Images
 
 The folder `pokemonterminal/Images/Extra` is for adding custom images. You can manually add backgrounds to this folder and they will be visible to the program. Only JPG format is supported. To see a list of all the custom backgrounds type:
@@ -234,13 +257,18 @@ Alternatively, you can delete images from this folder and it will not break the 
 * If you experience a line at the top of the terminal after changing the Pokemon, you can remove it by typing in the `clear` command or opening a new terminal.
 ![](https://i.imgur.com/5HMu1jD.png)
 
+* When using random Pokemon selection, the selected Pokemon name is displayed in the terminal output. If multiple terminal adapters are detected, you will be prompted to choose which one to use.
+
 * If you are using Tilix and the terminal background is not changing, try adjusting the transparency in your profile settings.
+
 * If you are experiencing issues with Terminology and are running on Ubuntu, make sure that you have installed the latest version:
    ```bash
    $ sudo add-apt-repository ppa:niko2040/e19
    $ sudo apt-get update
    $ sudo apt install terminology
    ```
+
+* If you are using Contour Terminal and the background is not changing, make sure you have PyYAML installed. Additionally, Contour requires a restart to display the new background image (unless `live_config: true` is enabled in your config).
 
 ## Saving
 

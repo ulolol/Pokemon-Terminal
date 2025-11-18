@@ -4,9 +4,9 @@
 
 _gitname=Pokemon-Terminal
 pkgname=pokemon-terminal-git
-pkgver=1.3.0
+pkgver=1.4.0
 pkgrel=1
-pkgdesc="Pokemon terminal themes with random selection support"
+pkgdesc="Pokemon Terminal Themes"
 arch=('any')
 url="https://github.com/ulolol/$_gitname"
 license=('GPL3')
