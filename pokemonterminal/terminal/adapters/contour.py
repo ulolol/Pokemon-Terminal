@@ -15,11 +15,12 @@ class ContourProvider(_TProv):
     __CONFIG_PATH = Path.home() / ".config" / "contour" / "contour.yml"
 
     def is_compatible() -> bool:
-        """Check if Contour Terminal is installed and configured."""
+        """Check if Contour Terminal is running."""
         if yaml is None:
             return False
-        # Check if config file exists
-        return ContourProvider.__CONFIG_PATH.exists()
+        # Check if running in Contour by environment variables
+        return (os.environ.get('CONTOUR_PROFILE') is not None or
+                os.environ.get('TERM') == 'contour')
 
     def change_terminal(path: str):
         """Set the background image in Contour Terminal config."""
