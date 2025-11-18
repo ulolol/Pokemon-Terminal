@@ -14,7 +14,8 @@ depends=('python>=3.6' 'python-psutil')
 optdepends=('gnome-shell: support changing GNOME wallpaper'
             'feh: support changing Openbox and i3 wallpaper'
             'terminology: support changing Terminology background'
-            'tilix: support changing Tilix background')
+            'tilix: support changing Tilix background'
+            'python-pyyaml: support changing Contour Terminal background')
 makedepends=('python-setuptools' 'python')
 source=("git+https://github.com/ulolol/$_gitname.git")
 md5sums=('SKIP')
