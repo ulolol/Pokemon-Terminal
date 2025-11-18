@@ -43,6 +43,7 @@ def main(argv=None):
         # TODO this doesn't account for the current set pokemon and might try
         # TODO to set the same pokemon again (essentially not doing anything)
         target = random.choice(Filter.filtered_list)
+        print(f"Selected random Pokemon: {target.get_name().title()}")
     else:
         options.id -= 1
         if len(Filter.POKEMON_LIST) > options.id:
