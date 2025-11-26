@@ -1,5 +1,7 @@
 ﻿# Pokemon-Terminal
 
+![Logo](pokemon-terminal-logo-2_github.gif)
+
 [![Version](https://img.shields.io/badge/version-v1.4.0-blue.svg)](https://github.com/ulolol/Pokemon-Terminal/releases/tag/1.4.0)
 
 <p align="center">
