@@ -8,6 +8,7 @@ from . import TerminalProvider as _TProv
 class GhosttyProvider(_TProv):
     CONFIG_PATH = Path.home() / ".config" / "ghostty" / "config"
     SETTING_KEY = "background-image"
+    FIT_KEY = "background-image-fit"
 
     @staticmethod
     def is_compatible() -> bool:
@@ -17,6 +18,7 @@ class GhosttyProvider(_TProv):
     def change_terminal(path: str):
         config = GhosttyProvider._ensure_config()
         GhosttyProvider._set_setting(config, GhosttyProvider.SETTING_KEY, path)
+        GhosttyProvider._set_setting(config, GhosttyProvider.FIT_KEY, "cover")
         GhosttyProvider._save_config(config)
         GhosttyProvider._reload()
 
@@ -24,6 +26,7 @@ class GhosttyProvider(_TProv):
     def clear():
         config = GhosttyProvider._ensure_config()
         GhosttyProvider._remove_setting(config, GhosttyProvider.SETTING_KEY)
+        GhosttyProvider._remove_setting(config, GhosttyProvider.FIT_KEY)
         GhosttyProvider._save_config(config)
         GhosttyProvider._reload()
 
