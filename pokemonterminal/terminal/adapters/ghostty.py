@@ -9,7 +9,7 @@ class GhosttyProvider(_TProv):
     CONFIG_PATH = Path.home() / ".config" / "ghostty" / "config"
     SETTING_KEY = "background-image"
     FIT_KEY = "background-image-fit"
-    OPACITY_KEY = "background-opacity"
+    IMAGE_OPACITY_KEY = "background-image-opacity"
 
     @staticmethod
     def is_compatible() -> bool:
@@ -20,7 +20,7 @@ class GhosttyProvider(_TProv):
         config = GhosttyProvider._ensure_config()
         GhosttyProvider._set_setting(config, GhosttyProvider.SETTING_KEY, path)
         GhosttyProvider._set_setting(config, GhosttyProvider.FIT_KEY, "cover")
-        GhosttyProvider._set_setting(config, GhosttyProvider.OPACITY_KEY, "0")
+        GhosttyProvider._set_setting(config, GhosttyProvider.IMAGE_OPACITY_KEY, "1.0")
         GhosttyProvider._save_config(config)
         GhosttyProvider._reload()
 
@@ -29,7 +29,7 @@ class GhosttyProvider(_TProv):
         config = GhosttyProvider._ensure_config()
         GhosttyProvider._remove_setting(config, GhosttyProvider.SETTING_KEY)
         GhosttyProvider._remove_setting(config, GhosttyProvider.FIT_KEY)
-        GhosttyProvider._remove_setting(config, GhosttyProvider.OPACITY_KEY)
+        GhosttyProvider._remove_setting(config, GhosttyProvider.IMAGE_OPACITY_KEY)
         GhosttyProvider._save_config(config)
         GhosttyProvider._reload()
 
