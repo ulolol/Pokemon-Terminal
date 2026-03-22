@@ -39,7 +39,7 @@
 - Random Pokemon selection with display feedback
 - Ability to change the Desktop Wallpaper & the Terminal background
 - Internal search system for finding Pokemon
-- Supports iTerm2, ConEmu, Terminology, Windows Terminal, Tilix, Kitty, and Contour terminal emulators
+- Supports iTerm2, ConEmu, Terminology, Windows Terminal, Tilix, Kitty, ghostty, and Contour terminal emulators
 - Supports Windows, MacOS, GNOME, Openbox (with feh), i3wm (with feh) and sway for desktops
 
 # Installation
@@ -70,7 +70,7 @@ You can then proceed with one of the following methods for installation:
 
 Linux users: Your distro might include `pip` in a different package than Python, make sure to have that installed.
 
-Run `pip3 install git+https://github.com/LazoCoder/Pokemon-Terminal.git`.
+Run `pip3 install git+https://github.com/ulolol/Pokemon-Terminal.git`.
 
 If you want a system-wide install, run the command as superuser or administrator.
 
@@ -96,7 +96,7 @@ Make sure you also have Python installed, `npm` won't automagically do that for 
 
 This doesn't works on Microsoft Store installations of Python.
 
-You can clone or [download](https://github.com/LazoCoder/Pokemon-Terminal/archive/master.zip) this repo, and run `python3 setup.py install` at the root of the repo.
+You can clone or [download](https://github.com/ulolol/Pokemon-Terminal/archive/master.zip) this repo, and run `python3 setup.py install` at the root of the repo.
 
 If you want a system-wide install, run the command as superuser or administrator.
 
